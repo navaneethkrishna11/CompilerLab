@@ -8,8 +8,8 @@ characters = 0;
 int in_word = 0;
 %}
 %%
-\n { lines++; characters++; in_word = 0; }
-[ \t] { spaces++; characters++; in_word = 0; }
+\n { lines++;  in_word = 0; }
+[ \t] { spaces++; in_word = 0; }
 [a-zA-Z0-9_] { characters++; if (!in_word) { words++; in_word = 1; } }
 . { characters++; }
 %%
